@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+
+body {
+  background-color: black;
+  color: aliceblue;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.animate-slide {
+  animation: slide 10s linear infinite;
+}
+
+/*  Continuous scrolling logo strip */
+.logo-strip {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background-color: #2563eb; 
+  padding: 0.75rem 0;
+}
+
+.logo-track {
+  display: flex;
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-track img {
+  height: 2rem;
+  margin: 0 2rem;
+}
+
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.team-member {
+  text-align: left;
+  color: white;
+}
+
+.team-member img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+}
+
+.member-info {
+  margin-top: 12px;
+}
+
+.role {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 4px 0 0 0;
+}
